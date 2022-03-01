@@ -1,12 +1,12 @@
-package net.penguincoders.doit.Utils;
+package net.mercyapp.todo.Utils;
 
-import android.content.ContentValues;
+import  android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import net.penguincoders.doit.Model.ToDoModel;
+import net.mercyapp.todo.Model.ToDoModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +22,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String CREATE_TODO_TABLE = "CREATE TABLE " + TODO_TABLE + "(" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + TASK + " TEXT, "
             + STATUS + " INTEGER)";
 
+
     private SQLiteDatabase db;
 
     public DatabaseHandler(Context context) {
@@ -30,13 +31,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+
         db.execSQL(CREATE_TODO_TABLE);
+
     }
+
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Drop older table if existed
         db.execSQL("DROP TABLE IF EXISTS " + TODO_TABLE);
+
         // Create tables again
         onCreate(db);
     }
@@ -44,6 +50,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void openDatabase() {
         db = this.getWritableDatabase();
     }
+
 
     public void insertTask(ToDoModel task){
         ContentValues cv = new ContentValues();
@@ -94,4 +101,5 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void deleteTask(int id){
         db.delete(TODO_TABLE, ID + "= ?", new String[] {String.valueOf(id)});
     }
+
 }

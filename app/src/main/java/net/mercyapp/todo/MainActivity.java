@@ -1,4 +1,4 @@
-package net.penguincoders.doit;
+package net.mercyapp.todo;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,9 +15,9 @@ import android.widget.Button;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import net.penguincoders.doit.Adapters.ToDoAdapter;
-import net.penguincoders.doit.Model.ToDoModel;
-import net.penguincoders.doit.Utils.DatabaseHandler;
+import net.mercyapp.todo.Adapters.ToDoAdapter;
+import net.mercyapp.todo.Model.ToDoModel;
+import net.mercyapp.todo.Utils.DatabaseHandler;
 
 import java.util.ArrayList;
 import java.util.Collection;

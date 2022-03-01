@@ -1,4 +1,4 @@
-package net.penguincoders.doit.Model;
+package net.mercyapp.todo.Model;
 
 public class ToDoModel {
     private int id, status;

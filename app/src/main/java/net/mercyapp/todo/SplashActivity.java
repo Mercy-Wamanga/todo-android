@@ -1,4 +1,4 @@
-package net.penguincoders.doit;
+package net.mercyapp.todo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
